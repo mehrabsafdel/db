@@ -77,14 +77,20 @@ public class Main {
                     }
                     break;
                 case "update":
-                    System.out.println();
+                    if (db.get(key) == null){
+                        System.out.println(false);
+                    }
+                    else{
+                        db.put(key,value);
+                        System.out.println(true);
+                    }
+
                     break;
                 default:
                     System.out.println("ERROR");
             }
             System.out.println();
         }
-                // do something
             }
         } catch (RocksDBException e) {
             // do some error handling
