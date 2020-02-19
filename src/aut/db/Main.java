@@ -25,17 +25,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String st;
         RocksDB.loadLibrary();
-        // the Options class contains a set of configurable DB options
-        // that determines the behaviour of the database.
         try (final Options options = new Options().setCreateIfMissing(true)) {
-            // a factory method that returns a RocksDB instance
             try (final RocksDB db = RocksDB.open(options, "./data")) {
 
                 while ((st = br.readLine()) != null) {
                     key = st.substring(0, st.indexOf(",")).getBytes();
                     value = st.substring(st.indexOf(",") + 1).getBytes();
-//                    System.out.println(key);
-//                    System.out.println(value);
                     db.put(key,value);
                 }
         while (true) {
@@ -84,7 +79,6 @@ public class Main {
                         db.put(key,value);
                         System.out.println(true);
                     }
-
                     break;
                 default:
                     System.out.println("ERROR");
@@ -95,13 +89,6 @@ public class Main {
         } catch (RocksDBException e) {
             // do some error handling
         }
-
-
-
-
-
-
-
     }
 }
 
