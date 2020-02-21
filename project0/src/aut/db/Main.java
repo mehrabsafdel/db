@@ -20,7 +20,7 @@ public class Main {
         String query;
         String input;
         String result;
-        File file = new File("C:\\Users\\mehrab\\IdeaProjects\\project0\\American Stock Exchange 20200206_Names_ClosedVal.csv");
+        File file = new File("American Stock Exchange 20200206_Names_ClosedVal.csv");
         BufferedReader br = new BufferedReader(new FileReader(file));
         Scanner scanner = new Scanner(System.in);
         String st;
@@ -87,7 +87,6 @@ public class Main {
         }
             }
         } catch (RocksDBException e) {
-            // do some error handling
         }
     }
 }
